@@ -239,13 +239,14 @@
 
         // Spawn enemies
         function spawnEnemies() {
-            if (Math.random() < 0.02 * game.player.level) {
+            // Slower spawn rate and slower speed
+            if (Math.random() < 0.01 * game.player.level) {
                 game.enemies.push({
                     x: Math.random() * (canvas.width - 30),
                     y: 0,
                     width: 30,
                     height: 30,
-                    speed: 2 * game.player.level,
+                    speed: 1 + (0.5 * game.player.level), // Much slower base speed
                     health: 20 * game.player.level
                 });
             }
