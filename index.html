@@ -9,7 +9,7 @@
         canvas {
             border: 2px solid #4a5568;
             background-color: #1a202c;
-            touch-action: none; /* Prevent default touch behaviors */
+            touch-action: none;
             user-select: none;
             -webkit-user-select: none;
         }
@@ -239,14 +239,14 @@
 
         // Spawn enemies
         function spawnEnemies() {
-            // Slower spawn rate and slower speed
-            if (Math.random() < 0.01 * game.player.level) {
+            // Much slower spawn rate and extremely slow speed
+            if (Math.random() < 0.005 * game.player.level) {
                 game.enemies.push({
                     x: Math.random() * (canvas.width - 30),
                     y: 0,
                     width: 30,
                     height: 30,
-                    speed: 1 + (0.5 * game.player.level), // Much slower base speed
+                    speed: 0.25 + (0.1 * game.player.level), // Extremely slow base speed
                     health: 20 * game.player.level
                 });
             }
